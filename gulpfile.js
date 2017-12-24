@@ -15,6 +15,9 @@ var config = {
     },
     html: {
         src: '*.html'
+    },
+    js: {
+      watch: 'js/main.js'
     }
 };
 
@@ -45,6 +48,7 @@ gulp.task('build', function(){
 gulp.task('watch', ['browserSync'], function(){
     gulp.watch(config.src + config.css.watch, ['build']);
     gulp.watch(config.src + config.html.src, browserSync.reload);
+    gulp.watch(config.src + config.js.watch, browserSync.reload);
 });
 
 gulp.task('browserSync', function(){
